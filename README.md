@@ -1,8 +1,13 @@
-# chatbot
-# NHAI Smart Assistant 
+# NHAI Smart Assistant
 
-A simple Streamlit app using Groq API to answer questions related to NHAI, tolls, and FASTag.
+A Streamlit chatbot using **Google Gemini API** to help users with:
+- FASTag issues
+- Toll and highway info
+- Complaints and NHAI guidance
 
-### Run locally
+---
+
+## How to Run Locally
+
+1. Install dependencies:
 pip install -r requirements.txt
-streamlit run main.py
