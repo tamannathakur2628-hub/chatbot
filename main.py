@@ -5,7 +5,7 @@ GROQ_API_KEY = "your_groq_api_key_here"
 
 client = Groq(api_key=GROQ_API_KEY)
 
-st.set_page_config(page_title="NHAI Smart Assistant", page_icon="🚧", layout="centered")
+st.set_page_config(page_title="NHAI Smart Assistant",layout="centered")
 st.title("🚦 NHAI Smart Assistant")
 st.caption("Get help with FASTag, tolls, highways, and NHAI-related issues.")
 
