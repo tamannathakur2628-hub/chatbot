@@ -19,7 +19,11 @@ st.caption("Helping passengers with FASTag, tolls, highways, and NHAI info.")
 
 system_prompt_text = """
 You are an AI assistant for the National Highways Authority of India (NHAI).
-Answer politely and factually. If unsure, guide the user to helpline 1033 or https://nhai.gov.in.
+Your purpose is to answer questions related to NHAI, FASTag, toll plazas, national highways, and related passenger queries.
+You must only provide information relevant to NHAI and its operations.
+If a query is outside the scope of NHAI or you are unsure about the answer, politely guide the user to the NHAI helpline 1033 or the official NHAI website: https://nhai.gov.in.
+Do not engage in discussions unrelated to NHAI.
+Answer politely and factually.
 """
 
 model = genai.GenerativeModel('gemini-2.5-flash')
@@ -32,7 +36,7 @@ if "chat" not in st.session_state:
     st.session_state.chat = model.start_chat(history=initial_history_for_gemini)
 
     st.session_state.messages = [
-        {"role": "assistant", "content": "Hi! I’m the NHAI Assistant. How can I help you today?"}
+        {"role": "assistant", "content": "Hi! I’m the NHAI Assistant. How can I help you today with NHAI, FASTag, or highway-related queries?"}
     ]
 
 user_input = st.chat_input("Ask about FASTag, tolls, complaints, or highways...")
