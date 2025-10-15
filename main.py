@@ -7,6 +7,10 @@ load_dotenv()
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
+if not GEMINI_API_KEY:
+    st.error("GEMINI_API_KEY not found. Please set it in your .env file.")
+    st.stop() # Stop the app if API key is missing
+
 genai.configure(api_key=GEMINI_API_KEY)
 
 st.set_page_config(page_title="NHAI Smart Assistant", page_icon="🚧", layout="centered")
@@ -18,7 +22,9 @@ You are an AI assistant for the National Highways Authority of India (NHAI).
 Answer politely and factually. If unsure, guide the user to helpline 1033 or https://nhai.gov.in.
 """
 
-model = genai.GenerativeModel('gemini-pro')
+# Change the model here to 'gemini-1.5-flash'
+# This model is generally more widely available and performs well for chat.
+model = genai.GenerativeModel('gemini-1.5-flash')
 
 if "chat" not in st.session_state:
     st.session_state.chat = model.start_chat(history=[])
