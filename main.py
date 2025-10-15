@@ -21,10 +21,7 @@ system_prompt = """
 You are an AI assistant for the National Highways Authority of India (NHAI).
 Answer politely and factually. If unsure, guide the user to helpline 1033 or https://nhai.gov.in.
 """
-
-# Change the model here to 'gemini-1.5-flash'
-# This model is generally more widely available and performs well for chat.
-model = genai.GenerativeModel('gemini-1.5-flash')
+model = genai.GenerativeModel('gemini-2.5-flash')
 
 if "chat" not in st.session_state:
     st.session_state.chat = model.start_chat(history=[])
