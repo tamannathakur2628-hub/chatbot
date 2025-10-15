@@ -1,11 +1,12 @@
 import streamlit as st
 from google.genai import Client
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
-# Gemini API key (replace with your own)
-GEMINI_API_KEY = "your_gemini_api_key_here"
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 client = Client(api_key=GEMINI_API_KEY)
-
 st.set_page_config(page_title="NHAI Smart Assistant", page_icon="🚧", layout="centered")
 st.title("🚦 NHAI Smart Assistant")
 st.caption("Helping passengers with FASTag, tolls, highways, and NHAI info.")
